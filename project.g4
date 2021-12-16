@@ -3,18 +3,26 @@ grammar project;
 prog: (decl | expr) + EOF
 	;
 	
-decl: ID ':' INT_TYPE '=' NUM
+//variable declare TODO: add list
+decl: ID '=' (NUM | STRING)
 	;
 	
-expr: expr '*' expr
-	| expr '+' expr
+//arithmetic operators
+expr: expr '+' expr
+	| expr '-' expr
+	| expr '*' expr
+	| expr '/' expr
+	| expr '%' expr
+	| expr '^' expr
 	| ID
 	| NUM
 	;
 
-ID: [a-z][a-zA-Z0-9_]*;
+//variable identifier can be any comb of chars/nums
+ID: [a-zA-Z_][a-zA-Z0-9_]*;
 NUM: '0' | '-'?[1-9][0-9]*;
-INT_TYPE : 'INT';
+STRING: ['][a-z]*[']|["][a-z]*["];
 
-COMMENT: '--' ~[\r\n]* -> skip;
-WS : [\t\n]+ -> skip;
+//even though """ or string literals are used as comments they do not classify as one
+COMMENT: '#' ~[\r\n]* -> skip;
+WS : [ \r\t\n]+ -> skip;
