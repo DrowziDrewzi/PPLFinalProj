@@ -24,7 +24,7 @@ conditionals: expr CONDITIONALS expr;
 
 codeblock: codeblockline*;
 
-codeblockline: INDENT IF |
+codeblockline: INDENT if_else |
 	INDENT decl | 
 	INDENT expr | 
 	INDENT assignExpr;
@@ -40,7 +40,7 @@ ASSIGNMENTOPS: '='|'+='|'-='|'*='|'/='|'^='|'%=';
 
 CONDITIONALS: '<'|'<='|'>'|'>='|'=='|'!=';
 
-IF: 'IF';
+IF: 'if';
 ELSE: 'else';
 INDENT: '\t';
 
