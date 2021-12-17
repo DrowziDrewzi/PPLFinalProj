@@ -14,6 +14,7 @@ expr: expr '+' expr
 	| expr '/' expr
 	| expr '%' expr
 	| expr '^' expr
+	| '(' expr ')'
 	| ID
 	| NUM
 	;
