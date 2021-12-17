@@ -17,8 +17,26 @@ features:
 To use ANTLR: use the quick start guide here -> https://www.antlr.org/
 After getting the jar file, make sure to update your system path variables. 
 
-To build the project, use the command 
+## To only build the grammar file:
 
+Use the command 
 antlr4 project.g4
 
 ^in this case, project.g4 will be the name of the file you want to build with. Again in this case, ours is project.g4
+
+## To build and run the parser:
+
+Open antlr folder in Intellij
+
+Ensure ANTLR Intellij plugin is installed.
+
+Plugin: https://plugins.jetbrains.com/plugin/7358-antlr-v4
+
+Install Tutorial: https://www.youtube.com/watch?v=svEZtRjVBTY
+
+Once installed Press CNTRL+SHIFT+G to Generate ANTLR Reconizer.
+
+Right Click 'prog: (decl | expr) + EOF' and 'Test Rule prog'
+
+Enter code on the left to parse.
+
